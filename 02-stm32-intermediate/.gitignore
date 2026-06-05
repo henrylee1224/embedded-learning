@@ -1,0 +1,51 @@
+# macOS
+.DS_Store
+
+# GCC ARM 编译产物
+*.o
+*.a
+*.elf
+*.bin
+*.hex
+*.map
+*.lst
+*.d
+
+# Keil
+*.uvprojx
+*.uvoptx
+*.uvguix.*
+*.BuildLog.htm
+Objects/
+Listings/
+
+# STM32CubeMX
+*.ioc.backup
+STM32CubeMX/
+
+# PlatformIO
+.pio/
+.piolibdeps/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# 调试
+*.gdbinit
+.gdbinit
+
+# 烧录
+*.log
+JLinkLog.txt
+JLinkSettings.ini
+
+# 白名单
+!*.c
+!*.h
+!*.s
+!*.ld
+!*.md
+!platformio.ini
+!Makefile

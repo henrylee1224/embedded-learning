@@ -1,0 +1,56 @@
+# macOS
+.DS_Store
+
+# Linux内核编译
+*.o
+*.a
+*.so
+*.ko
+*.mod.c
+modules.order
+Module.symvers
+*.cmd
+.tmp_versions/
+modules.builtin
+modules.builtin.modinfo
+
+# Makefile相关
+Makefile.in
+configure
+config.h
+config.status
+autom4te.cache/
+aclocal.m4
+compile
+config.guess
+config.sub
+depcomp
+install-sh
+missing
+libtool
+ltmain.sh
+
+# 交叉编译
+*.elf
+*.bin
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# 临时文件
+*.tmp
+*.bak
+.cache/
+
+# 白名单
+!*.c
+!*.h
+!*.cpp
+!*.hpp
+!Makefile
+!Kconfig
+!*.dts
+!*.dtsi
+!*.md

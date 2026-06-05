@@ -1,0 +1,33 @@
+# macOS
+.DS_Store
+._*
+
+# SDCC 编译产物
+*.ihx
+*.hex
+*.rel
+*.lk
+*.map
+*.lst
+*.asm
+*.sym
+*.cdb
+
+# PlatformIO
+.pio/
+.piolibdeps/
+
+# IDE
+.vscode/
+*.swp
+*.swo
+
+# 烧录
+*.log
+stcgal.log
+
+# 白名单
+!*.c
+!*.h
+!*.md
+!platformio.ini

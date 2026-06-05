@@ -1,0 +1,42 @@
+# macOS
+.DS_Store
+
+# PlatformIO / Arduino
+.pio/
+.piolibdeps/
+.pytest_cache/
+.arduino15/
+arduino_secrets.h
+
+# 编译产物
+*.o
+*.a
+*.elf
+*.bin
+*.map
+*.lst
+
+# ESP32特定
+*.partitions.bin
+*.bootloader.bin
+*.app.bin
+sdkconfig.old
+sdkconfig.orig
+partitions.csv
+
+# IDE
+.vscode/
+*.swp
+*.swo
+
+# 烧录
+*.log
+
+# 白名单
+!*.c
+!*.h
+!*.cpp
+!*.ino
+!*.md
+!platformio.ini
+!partitions.csv

@@ -1,0 +1,362 @@
+# =========================================
+# macOS 原生嵌入式开发 .gitignore
+# =========================================
+# 适用于：51单片机、STM32、ESP32、AVR、ARM等嵌入式项目
+# =========================================
+
+# =========================================
+# macOS 系统文件
+# =========================================
+
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.AppleDouble
+.LSOverride
+.DocumentRevisions-V100
+.fseventsd
+.VolumeIcon.icns
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# =========================================
+# SDCC 编译器输出（51单片机）
+# =========================================
+
+# 编译产物
+*.ihx          # Intel HEX 格式
+*.hex          # HEX 格式
+*.lk           # 链接器输出
+*.map          # 内存映射
+*.mem          # 内存统计
+*.rst          # 重定位信息
+*.sym          # 符号表
+*.rel          # 可重定位文件
+*.adb          # 调试信息
+*.asm          # 生成的汇编
+*.lst          # 列表文件
+*.lnk          # 链接脚本
+*.cdb          # 代码数据库
+*.omf          # 目标模块格式
+*.bin          # 二进制
+*.elf          # ELF 格式
+
+# =========================================
+# PlatformIO / Arduino
+# =========================================
+
+.pio/
+.piolibdeps/
+.pytest_cache/
+.arduino15/
+arduino_secrets.h
+
+# =========================================
+# GCC / ARM 编译器（STM32、ARM）
+# =========================================
+
+*.o            # 目标文件
+*.a            # 静态库
+*.so           # 共享库
+*.ko           # 内核模块
+*.mod.c        # 模块C文件
+modules.order
+Module.symvers
+*.d            # 依赖文件
+*.s            # 汇编文件
+
+# =========================================
+# Keil / MDK（ARM）
+# =========================================
+
+*.uvproj
+*.uvopt
+*.uvgui*
+*.uvprojx
+*.uvoptx
+*.uvguix.*
+*.BuildLog.htm
+RTE/
+Objects/
+
+# =========================================
+# IAR Embedded Workbench
+# =========================================
+
+*.ewd
+*.ewp
+*.eww
+*.dep
+*.s*
+settings/
+
+# =========================================
+# STM32CubeMX
+# =========================================
+
+*.ioc.backup
+*.ioc.old
+STM32CubeMX/
+
+# =========================================
+# ESP32 / ESP8266
+# =========================================
+
+*.partitions.bin
+*.bootloader.bin
+*.app.bin
+sdkconfig.old
+sdkconfig.orig
+
+# =========================================
+# AVR / Arduino
+# =========================================
+
+*.eep
+*.elf
+*.lss
+*.sym
+*.cpp
+*.ino.cpp
+
+# =========================================
+# 通用 IDE 配置
+# =========================================
+
+# VSCode
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Xcode
+*.xcworkspace
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+
+# CLion
+.idea/
+cmake-build-*/
+CMakeLists.txt.user
+
+# Eclipse
+.metadata/
+local.properties
+.externalToolBuilders/
+*.launch
+*.pydevproject
+.settings/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.swp
+.swo
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list/
+tramp
+.\#*
+
+# =========================================
+# 项目构建目录
+# =========================================
+
+build/
+cmake-build-*/
+Debug/
+Release/
+*.build/
+_output/
+dist/
+out/
+
+# =========================================
+# 烧录工具相关
+# =========================================
+
+*.log          # 通用日志
+stcgal.log     # stcgal 烧录日志
+upload.log     # 上传日志
+flash.log      # 烧录日志
+JLinkLog.txt   # JLink 日志
+JLinkSettings.ini
+
+# =========================================
+# 调试文件
+# =========================================
+
+*.gdbinit
+*.gdb_history
+.gdb_history
+*.gdb_script
+.gdbinit
+.gdbinit-*
+.gdb_history-*
+
+# =========================================
+# 版本控制临时文件
+# =========================================
+
+.git/
+.svn/
+.hg/
+.bzr/
+
+# =========================================
+# 包管理器
+# =========================================
+
+node_modules/
+vendor/
+packages/
+
+# =========================================
+# 文档生成
+# =========================================
+
+docs/_build/
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.idx
+*.ilg
+*.ind
+*.lof
+*.lot
+*.lol
+
+# =========================================
+# 临时文件
+# =========================================
+
+*.tmp
+*.temp
+*.bak
+*.backup
+.cache/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# =========================================
+# 环境变量 / 密钥
+# =========================================
+
+.env
+.env.local
+.env.*.local
+.secrets
+*.pem
+*.key
+*.crt
+
+# =========================================
+# 数据库
+# =========================================
+
+*.db
+*.sqlite
+*.sqlite3
+
+# =========================================
+# 不要忽略的重要文件（白名单）
+# =========================================
+
+# 源代码（必须提交）
+!*.c
+!*.h
+!*.cpp
+!*.hpp
+!*.cc
+!*.hh
+!*.cxx
+!*.hxx
+!*.ino
+!*.asm
+!*.s
+
+# 配置文件（必须提交）
+!platformio.ini
+!Makefile
+!CMakeLists.txt
+!*.cfg
+!*.ini
+!*.json
+!*.yaml
+!*.yml
+!*.toml
+!*.xml
+!*.properties
+
+# 文档（必须提交）
+!*.md
+!*.txt
+!*.rst
+!*.adoc
+!README
+!README.md
+!LICENSE
+!CHANGELOG
+!CONTRIBUTING
+
+# 脚本（必须提交）
+!*.sh
+!*.py
+!*.bat
+!*.cmd
+!*.ps1
+
+# 参考资料（可选）
+# !*.pdf
+# !*.doc
+# !*.docx
+# !*.xls
+# !*.xlsx
+
+# =========================================
+# 嵌入式特定白名单
+# =========================================
+
+# 链接脚本（重要！）
+!*.ld
+!*.lds
+
+# 启动文件
+!startup_*.s
+!system_*.c
+
+# 设备头文件
+!stm32*.h
+!atmega*.h
+!esp*.h
+
+# =========================================
+# 项目特定文件（根据需要调整）
+# =========================================
+
+# 如果使用 Git LFS
+*.bin filter=lfs diff=lfs merge=lfs -text
+*.hex filter=lfs diff=lfs merge=lfs -text
+*.elf filter=lfs diff=lfs merge=lfs -text
