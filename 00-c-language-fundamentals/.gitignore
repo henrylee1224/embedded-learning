@@ -1,0 +1,76 @@
+# ==================== C/C++ 编译产物 ====================
+# 默认可执行文件
+a.out
+*.out
+# 无后缀自定义可执行程序
+main
+test
+app
+prog
+
+# 目标文件、中间编译文件
+*.o
+*.obj
+*.lo
+*.la
+*.al
+
+# 库文件
+*.so
+*.so.*
+*.dylib
+*.dll
+*.lib
+*.a
+*.pdb
+
+# 调试符号、崩溃文件(macOS)
+*.dSYM
+*.dsym
+core
+core.*
+
+# 预处理、依赖文件
+*.i
+*.ii
+*.s
+*.asm
+*.dep
+*.d
+
+# ==================== 构建工具产物 ====================
+# Makefile 生成
+Makefile.bak
+*.mk
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+
+# ==================== 日志、临时文件 ====================
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# ==================== macOS 系统文件 ====================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ==================== 常见 IDE/编辑器 配置 ====================
+# VS Code
+.vscode/
+*.code-workspace
+# CLion
+.idea/
+cmake-build-*/
+# Vim/Nvim
+*~
+# Xcode
+*.xcodeproj
+*.xworkspace
