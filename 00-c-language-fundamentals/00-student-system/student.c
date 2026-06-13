@@ -104,7 +104,7 @@ void deleteStudent(Student students[], int *count) {
     // 查找并删除
     int found = 0;
     for (int i = 0; i < *count; i++) {
-        if (studetns[i].id == id) {
+        if (students[i].id == id) {
             // 将后面的元素前移
             for (int j = i; j < *count - 1; j++) {
                 students[j] = students[j + 1];
@@ -119,6 +119,7 @@ void deleteStudent(Student students[], int *count) {
     if (!found) {
         printf("❌ 未找到学号为 %d 的学生! \n", id);
     }
+}
 
     // 修改学生信息
     void modifyStudent(Student students[], int count) {
@@ -213,7 +214,7 @@ void deleteStudent(Student students[], int *count) {
 
             int found = 0;
             for (int i = 0; i < count; i++) {
-                if (student[i].id == id) {
+                if (students[i].id == id) {
                     printf("\n--- 学生信息 ---\n");
                     printf("学号: %d\n", students[i].id);
                     printf("姓名: %s\n", students[i].name);
@@ -260,7 +261,7 @@ void deleteStudent(Student students[], int *count) {
     }
 
     // 显示所有学生信息
-    void diaplayAll(Student students[], int count) {
+    void displayAll(Student students[], int count) {
         if (count == 0) {
             printf("❌ 没有学生信息! \n");
             return;
@@ -301,7 +302,8 @@ void deleteStudent(Student students[], int *count) {
         clearInputBuffer();
 
         // 冒泡排序
-        for (int i = 0; i < count - 1 - i; j++) {
+        for (int i = 0; i < count - 1; i++) {
+            for (int j = 0; i < count - 1 - i; j++) {
             bool shouldSwap = false;
 
             if (choice == 1) {
@@ -383,7 +385,90 @@ void saveToFile(Student students[], int count) {
     printf("✅ 学生信息已保存到文件 (students.dat)! \n");
 }
 
+// 从文件加载
+int loadFromFile(Student students[]) {
+    FILE *fp = fopen("students.dat", "rb");
+    if (fp == NULL) {
+        printf("⚠️ 文件不存在或打开失败! \n");
+        return 0;
+    }
+
+    int count = 0;
+
+    // 读取学生数量
+    fread(&count, sizeof(int), 1, fp);
+
+    if (count > MAX_STUDENTS) {
+        printf("❌ 文件数据异常! \n");
+        fclose(fp);
+        return 0;
+    }
+
+    // 读取学生数据
+    fread(students, sizeof(Student), count, fp);
+
+    fclose(fp);
+    printf("✅ 成功从文件加载 %d 名学生信息! \n", count);
+
+    return count;
+}
+
+// 主函数
 int main() {
-   showMenu();
+    Student students[MAX_STUDENTS];
+    int count = 0;
+
+    printf("=================================\n");
+    printf("    欢迎使用学生信息管理系统\n");
+    printf("=================================\n");
+
+    // 尝试从文件加载数据
+    printf("\n正在尝试从文件加载数据...\n");
+    count = loadFromFile(students);
+
+    // 主循环
+    while (1) {
+        showMenu();
+        int choice = getMenuChoice();
+
+        switch (choice) {
+            case 1:
+            addStudent(students, &count);
+            break;
+            case 2:
+            deleteStudent(students, &count);
+            break;
+            case 3:
+            modifyStudent(students, count);
+            break;
+            case 4:
+            searchStudent(students, count);
+            break;
+            case 5:
+            displayAll(students, count);
+            break;
+            case 6:
+            sortByScore(students, count);
+            break;
+            case 7:
+            statistics(students, count);
+            break;
+            case 8:
+            saveToFile(students, count);
+            break;
+            case 9:
+            count = loadFromFile(students);
+            break;
+            case 0:
+            printf("\n感谢使用, 再见! 👋\n");
+            return 0;
+            default:
+            printf("❌ 无效选择, 请重新输入! \n");
+        }
+
+        printf("\n按回车键继续...");
+        getchar();
+    }
+
     return 0;
 }
