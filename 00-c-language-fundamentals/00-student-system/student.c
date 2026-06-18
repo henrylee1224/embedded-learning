@@ -74,6 +74,11 @@ void addStudent(Student students[], int *count) {
     fgets(newStudent.gender, sizeof(newStudent.gender), stdin);
     newStudent.gender[strcspn(newStudent.gender, "\n")] = '\0';
 
+    // 输入成绩
+    printf("成绩: ");
+    scanf("%f", &newStudent.score);
+    clearInputBuffer();
+
     // 输入专业
     printf("专业: ");
     fgets(newStudent.major, sizeof(newStudent.major), stdin);
@@ -168,6 +173,15 @@ void deleteStudent(Student students[], int *count) {
                 newGender[strcspn(newGender, "\n")] = '\0';
                 if (strlen(newGender) > 0) {
                     strcpy(students[i].gender, newGender);
+                }
+
+                // 修改成绩
+                printf("新成绩 (回车跳过): ");
+                float newScore;
+                scanf("%f", &newScore);
+                clearInputBuffer();
+                if (newScore > 0.0) {
+                    students[i].score = newScore;
                 }
 
                 // 修改专业
@@ -303,7 +317,7 @@ void deleteStudent(Student students[], int *count) {
 
         // 冒泡排序
         for (int i = 0; i < count - 1; i++) {
-            for (int j = 0; i < count - 1 - i; j++) {
+            for (int j = 0; j < count - 1 - i; j++) {
             bool shouldSwap = false;
 
             if (choice == 1) {
