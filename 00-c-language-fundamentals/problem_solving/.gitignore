@@ -23,3 +23,5 @@ while_armstrong
 prime_numbers
 print_until_3
 array_max
+array_num
+array_reverse
