@@ -25,3 +25,6 @@ print_until_3
 array_max
 array_num
 array_reverse
+bubble_sort
+matrix_lower_triangle
+find_matrix_max
